@@ -42,8 +42,7 @@ let data = $(this).serialize();
         console.log(res);
       // 注册失败
       if (res.status !== 0) {
-        return layer.msg(res.message);
-      
+        return layer.msg(res.message);     
       }
       // 注册成功
       layer.msg("注册成功");
