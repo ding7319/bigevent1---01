@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.layui-footer{
+    text-align: center;
+}
+.iconfont{
+    padding-right: 7px;
+}
+.layui-body{
+    overflow: hidden;
+}
+.cirle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #009688;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    display: none;
+    
+}
+.layui-icon{
+    padding: 5px ;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+.layui-side .userInfo{
+    text-align: center;
+    padding: 5px;
+}

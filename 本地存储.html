@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" />
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <script>
+      // 获取元素
+      let inp = document.querySelector("input");
+      let setBtn = document.querySelector(".set");
+      let getBtn = document.querySelector(".get");
+
+      let arr = [
+        { id: 1, name: "xn", age: 15 },
+        { id: 2, name: "xs", age: 14 },
+        { id: 3, name: "xf", age: 19 },
+        { id: 4, name: "xa", age: 25 },
+      ];
+      // localStorage的操作
+
+      // 存储数据
+      setBtn.onclick = function () {
+        localStorage.setItem("data", arr);
+        localStorage.setItem("data", JSON.stringify(arr));
+      };
+
+      // 获取数据
+      getBtn.onclick = function () {
+        console.log(localStorage.getItem("data"));
+        // 还需要将其JSON.parse() 解析成JS对象
+        console.log(JSON.parse(localStorage.getItem("data")));
+      };
+    </script>
+  </body>
+</html>

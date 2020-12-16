@@ -36,7 +36,7 @@ let data = $(this).serialize();
 // 4.发送ajax
   $.ajax({
     type: "POST",
-    url: "http://ajax.frontend.itheima.net/api/reguser",
+    url: "/api/reguser",
     data,
     success: function (res) {
         console.log(res);
@@ -60,13 +60,19 @@ let data = $(this).serialize();
     let data = $(this).serialize()
     $.ajax({
       type: "POST",
-      url: "http://ajax.frontend.itheima.net/api/login",
+      url: "/api/login",
       data,
       success: function (res) {
         if (res.status !== 0) {
           return layer.msg(res.message);
         }
-        layer.msg("登陆成功，即将跳转", { time: 1000, },
+
+        // 把token储存在本地存储中
+        // 前一个是名称，后一个是数据的令牌，找位置
+        localStorage.setItem("token",res.token)
+        // 登陆成功，页面跳转，延时1秒钟
+        layer.msg("登陆成功，即将跳转",
+          { time: 1000, },
           function () {
             location.href = "/home/index.html";
           }
